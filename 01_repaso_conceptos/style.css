@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+}
+
+#container {
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#btns {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  border-radius: 20px;
+  width: 150px;
+  height: 70px;
+  background-color: rgb(144, 154, 71);
+}
+
+
+button:hover {
+  color: rgb(255, 0, 0);
+  background-color: orange;
+  scale: 1.1;
+}
