@@ -4,14 +4,169 @@ body {
   background-color: #000000; /* color de respaldo (cielo) */
 }
 
-#escenario{
+#escenario {
   position: relative;
   width: 750px;
   height: 500px;
-  background-image: url('/assets/fondo.png');
   background-position: center;
   background-size: cover;
   margin: auto;
   margin-top: 50px;
   border: solid 2px brown;
+  background-image: url("/assets/fondo.png");
+  overflow: hidden;
+}
+
+.nube {
+  position: absolute;
+  transition: transform 5s ease;
+}
+.nube:hover {
+  transform: scale(1.5);
+}
+.nube_pequeña {
+  width: 60px;
+  height: auto;
+  top: 30px;
+}
+.nube_pequeña_2 {
+  width: 60px;
+  height: auto;
+  top: 270px;
+  left: 150px;
+}
+.nube_mediana {
+  width: 90px;
+  height: auto;
+  top: 220px;
+}
+.nube_grande {
+  width: 140px;
+  height: auto;
+  top: 200px;
+  left: 300px;
+}
+.nube_grande_2 {
+  width: 140px;
+  height: auto;
+  top: 20px;
+  left: 300px;
+}
+.nube_grande_3 {
+  width: 140px;
+  height: auto;
+  top: 120px;
+  left: 150px;
+}
+.nube_grande_4 {
+  width: 140px;
+  height: auto;
+  top: 150px;
+  left: 500px;
+}
+.nube_grande_5 {
+  width: 140px;
+  height: auto;
+  top: 10px;
+  left: 550px;
+}
+.son_goku:hover {
+  box-shadow: 0 0 10px 2px goldenrod;
+}
+.son_goku {
+  opacity: 0.8;
+  z-index: 1;
+  border-radius: 20px;
+  border: solid 1px gold;
+  height: 20px;
+  width: auto;
+  top: 0.5px;
+}
+#cofre {
+  position: absolute;
+  width: 90px;
+  height: auto;
+  bottom: 30px;
+  left: 350px;
+  transition: transform 0.5s ease;
+}
+
+#cofre:hover {
+  transform: scale(1.1);
+}
+
+#modal {
+  border-radius: 10px;
+  position: absolute;
+  border: solid 3px rgb(0, 0, 0);
+  background-color: rgb(167, 64, 64, 0.8);
+  opacity: 0.8;
+  width: 150px;
+  height: 100px;
+  bottom: 80px;
+  left: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  /* Transición */
+  opacity: 0;
+  pointer-events: none; /* bloquea clics mientras está cerrado */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: scale(
+    0.5
+  ); /* pequeño al inicio */ /* 🔹 Líneas internas — la "cuadrícula visual" */
+  background-image: linear-gradient(to right, black 2px, transparent 1px),
+    linear-gradient(to bottom, black 2px, transparent 1px);
+  background-size: 25% 25%; /* Cada cuadrado ocupa 1/4 del modal */
+}
+#modal.active {
+  opacity: 1;
+  pointer-events: auto; /* activa clics */
+  transform: scale(1); /* tamaño normal */
+}
+
+#modal:hover {
+  transform: scale(1.1);
+}
+
+#cerrar_modal:hover {
+  color: white;
+  transform: scale(1.05);
+}
+
+#cerrar_modal {
+  background-color: brown;
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+  position: absolute;
+  right: -15px;
+  top: -12px;
+}
+.moneda:hover {
+  transform: scale(1.2);
+}
+
+.moneda {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+#cofre:hover {
+  cursor: url("assets/cursors/llave_cursor.png"), auto;
+}
+
+#caracol {
+  width: 20px;
+  height: auto;
+  position: absolute;
+  left: 258px;
+  bottom: 60px;
+  transform: rotate(90deg) scaleX(-1);
+  filter: blur(0.2px);
+  transition: 2s;
+  transform: rotate(90deg) scaleX(-1);}
+
+#caracol:hover {
+  transform: rotate(90deg) scaleX(-1) scale(1.1);
 }
