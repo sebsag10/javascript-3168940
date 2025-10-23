@@ -6,8 +6,8 @@
     <title>Escenario interactivo</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div id="escenario">  
+  <body class="body">
+    <div class="escenario">  
 
 <!-- nubes -->
 <img src="/assets/Animables/nube.png" class="nube nube_pequeña" alt="nube">
@@ -21,21 +21,34 @@
 <!-- goku -->
 <img src="/assets/Animables/son_goku.png" alt="son goku" class="nube nube_pequeña son_goku">
 <!-- caracol -->
- <img src="/assets/Animables/caracol.png" alt="caracol" id="caracol" >
- <!-- cofre -->
+<img src="/assets/Animables/caracol.png" alt="caracol" class="caracol" >
+<!-- cofre -->
 <img src="/assets/Animables/cofre.png" alt="cofre" id="cofre">
+<!-- modal invetario -->
 <div id="modal">
   <div class="moneda_divs"><img src="/assets/Clickeables/moneda_platino.png" alt="moneda de platino"  class="moneda platino" ></div>
   <div class="moneda_divs"><img src="/assets/Clickeables/moneda_oro.png" alt="moneda de oro"  class="moneda oro"></div>
   <div class="moneda_divs"><img src="/assets/Clickeables/moneda_bronce.png" alt="moneda de bronce" class="moneda bronce"></div>
-
-
   <button id="cerrar_modal">X</button>
 </div>
-  
 
+
+<div id="score_container">
+  <div><h2 class="moneda_titulo_contador">monedas</h2></div>
+<div id="monedas_container">
+  <div class="fondo_moneda" ><span class="numer_score score_bronce" >0</span><img src="/assets/Clickeables/moneda_bronce.png" alt="moneda" class="moneda_score "></div>
+  <div class="fondo_moneda" ><span class="numer_score score_oro">0</span><img src="/assets/Clickeables/moneda_oro.png" alt="moneda"class="moneda_score "></div>
+  <div class="fondo_moneda" ><span class="numer_score score_platino">0</span><img src="/assets/Clickeables/moneda_platino.png" alt="moneda"class="moneda_score"></div>
+</div></div>
+
+<img src="/assets/Clickeables/conejo.png" alt="conejo" id="conejo" >
+
+<div class="plantera"><img src="/assets/Animables/plantera_2.webp" alt="planta" class="planta_1"><img src="/assets/Animables/plantera_1.webp" alt="planta" class="planta_2"></div>
+
+<div class="botones_cambio_fondo"><img src="/assets/Clickeables/luna.png" alt="luna" class="luna"><img src="/assets/Clickeables/sol.png" alt="sol" class="sol"></div>
 
     </div>
+    <script src="app_2.js"></script>
     <script src="app.js"></script>
   </body>
 

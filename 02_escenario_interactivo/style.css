@@ -1,10 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #000000; /* color de respaldo (cielo) */
+  background-color: #2d2c2c; /* color de respaldo (cielo) */
 }
 
-#escenario {
+.escenario {
   position: relative;
   width: 750px;
   height: 500px;
@@ -16,7 +16,88 @@ body {
   background-image: url("/assets/fondo.png");
   overflow: hidden;
 }
+.modo_noche {
+  background-image: url(/assets/fondo_noche.png);
+  position: relative;
+  width: 750px;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  margin-top: 50px;
+  border: solid 2px brown;
+  overflow: hidden;
+  transition: background-image 3s ease-in-out;
+}
 
+.sol {
+  position: absolute;
+  width: 90px;
+  height: auto;
+  left: 50px;
+  top: 20px;
+  filter: drop-shadow(2px 2px 20px yellow);
+}
+
+.luna {
+  position: absolute;
+  width: 90px;
+  height: auto;
+  left: 50px;
+  top: -200px;
+  filter: drop-shadow(2px 2px 20px rgb(215, 231, 231));
+}
+
+.aparecer_luna {
+  animation: aparecer_luna 3s ease-in-out forwards;
+}
+
+.ocultar_sol {
+  opacity: 1;
+  animation: ocultar_sol 2s ease-in-out forwards;
+}
+
+@keyframes ocultar_sol {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+@keyframes aparecer_luna {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  90% {
+    transform: translateY(250px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(240px);
+  }
+}
+.ocultar_luna {
+  animation: ocultar_luna 2s ease-in-out forwards;
+}
+@keyframes ocultar_luna {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+/* modo noche  0000000000000000000000000000000000000000000*/
 .nube {
   position: absolute;
   transition: transform 5s ease;
@@ -50,7 +131,7 @@ body {
   width: 140px;
   height: auto;
   top: 20px;
-  left: 300px;
+  left: 500px;
 }
 .nube_grande_3 {
   width: 140px;
@@ -62,13 +143,13 @@ body {
   width: 140px;
   height: auto;
   top: 150px;
-  left: 500px;
+  left: 600px;
 }
 .nube_grande_5 {
   width: 140px;
   height: auto;
   top: 10px;
-  left: 550px;
+  left: 650px;
 }
 .son_goku:hover {
   box-shadow: 0 0 10px 2px goldenrod;
@@ -92,6 +173,7 @@ body {
 }
 
 #cofre:hover {
+  filter: drop-shadow(1px 1px 10px gold);
   transform: scale(1.1);
 }
 
@@ -99,7 +181,7 @@ body {
   border-radius: 10px;
   position: absolute;
   border: solid 3px rgb(0, 0, 0);
-  background-color: rgb(167, 64, 64, 0.8);
+  background-color: rgba(95, 36, 36, 0.8);
   opacity: 0.8;
   width: 150px;
   height: 100px;
@@ -108,7 +190,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-
+  cursor: pointer;
   /* Transición */
   opacity: 0;
   pointer-events: none; /* bloquea clics mientras está cerrado */
@@ -142,31 +224,217 @@ body {
   position: absolute;
   right: -15px;
   top: -12px;
-}
-.moneda:hover {
-  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .moneda {
   width: 30px;
   height: 30px;
-  transition: transform 0.3s ease;
 }
 #cofre:hover {
   cursor: url("assets/cursors/llave_cursor.png"), auto;
 }
 
-#caracol {
+.caracol {
   width: 20px;
-  height: auto;
   position: absolute;
   left: 258px;
   bottom: 60px;
   transform: rotate(90deg) scaleX(-1);
-  filter: blur(0.2px);
-  transition: 2s;
-  transform: rotate(90deg) scaleX(-1);}
+  border: solid 3px red; /* circulo inicial en hover */
+  border-radius: 50%; /* hace el círculo */
+  transition: all 0.2s;
+  animation: parpadeo 1s infinite;
+  cursor: pointer;
+}
 
-#caracol:hover {
-  transform: rotate(90deg) scaleX(-1) scale(1.1);
+/* efecto hover: circulo alrededor */
+.caracol:hover {
+  transform: scale(1.1) rotate(90deg) scaleX(-1);
+  border: solid 1px white;
+}
+@keyframes parpadeo {
+  0%,
+  100% {
+    border-color: rgb(191, 255, 0);
+  }
+  50% {
+    border-color: rgb(235, 235, 235);
+  }
+}
+/* animación de subir */
+@keyframes trepar {
+  from {
+    transform: rotate(90deg) scaleX(-1) translateX(0px);
+  }
+  to {
+    transform: rotate(90deg) scaleX(-1) translateX(35px);
+  }
+}
+
+/* clase que se activa al hacer click */
+.subir {
+  animation: trepar 9s steps(8) forwards;
+  border: none; /* desaparece el circulo al hacer click */
+}
+
+#score_container {
+  position: absolute;
+  display: flex;
+  left: 540px;
+  top: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#monedas_container {
+  display: flex;
+}
+
+.moneda_score img {
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.fondo_moneda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-image: url("/assets/imgs/fondo_monedas.png"); /* mismo fondo para todas */
+  background-size: cover;
+  background-position: center;
+  z-index: 1000;
+  position: relative;
+}
+
+.moneda_score {
+  width: 40px; /* tamaño de la moneda */
+  height: 40px;
+}
+h2 {
+  margin: 0;
+}
+
+#conejo {
+  position: absolute;
+  width: 30px;
+  height: auto;
+  left: 490px;
+  bottom: 40px;
+  cursor: pointer;
+}
+
+.saltar {
+  animation: saltoConGiro 3s ease-in-out forwards;
+}
+/* animación del salto hacia adelante */
+@keyframes saltoConGiro {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  10% {
+    transform: translate(0px, -50px) rotate(180deg); /* sube y gira medio */
+  }
+  20% {
+    transform: translate(20px, 0) rotate(360deg); /* aterriza girando */
+  }
+  30% {
+    transform: translate(30px, -50px) rotate(540deg); /* vuelve a saltar */
+  }
+  50% {
+    transform: translate(40px, 0) rotate(720deg); /* cae y completa el giro */
+  }
+  100% {
+    transform: translateX(0, 0);
+  }
+}
+.numer_score {
+  position: absolute;
+  left: 41px;
+  color: white;
+  bottom: 37px;
+  font-size: 15px;
+}
+
+.moneda_titulo_contador {
+  transition: all 9s ease;
+}
+
+.moneda {
+  animation: vibrar 1s infinite; /* 0.15s por ciclo, repite para siempre */
+}
+
+/* Animación de vibración */
+@keyframes vibrar {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px); /* sube */
+  }
+  100% {
+    transform: translateY(0); /* baja */
+  }
+}
+
+.plantera img {
+  position: absolute;
+  width: 50px;
+  height: auto;
+  bottom: 30px;
+  left: 150px;
+}
+
+.planta_1 {
+  display: none;
+}
+
+.planta_1 {
+  display: none;
+  animation: planta_1 1.5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.planta_2 {
+  animation: planta_1 1.5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes planta_1 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+img {
+  opacity: 0.9;
+}
+.nube {
+  opacity: 0.5;
+}
+
+.coger_moneda {
+  animation: coger_moneda 0.8s ease-out forwards;
+}
+
+@keyframes coger_moneda {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(600px, -600px); /* se va hacia arriba e izquierda */
+    opacity: 0; /* desaparece */
+  }
 }
