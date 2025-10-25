@@ -151,17 +151,15 @@ body {
   top: 10px;
   left: 650px;
 }
-.son_goku:hover {
-  box-shadow: 0 0 10px 2px goldenrod;
-}
+
 .son_goku {
   opacity: 0.8;
   z-index: 1;
   border-radius: 20px;
-  border: solid 1px gold;
-  height: 20px;
+  height: 80px;
   width: auto;
   top: 0.5px;
+  filter: drop-shadow(1px 1px 1px yellow);
 }
 #cofre {
   position: absolute;
@@ -437,4 +435,155 @@ img {
     transform: translate(600px, -600px); /* se va hacia arriba e izquierda */
     opacity: 0; /* desaparece */
   }
+}
+/* aqui esta el escenario 2 ******************************************************* */
+
+.fondo_2 {
+  position: relative;
+  background-image: url(/assets_2/fondo/fondo_2.jpg);
+  height: 500px;
+  width: 750px;
+  background-size: cover;
+  margin: auto;
+  margin-top: 50px;
+  border: solid 2px rgb(0, 0, 0);
+  overflow: hidden;
+  background-position: center bottom;
+  background-size: cover;
+  z-index: -1000;
+}
+
+.mario {
+  position: absolute;
+  width: 85px;
+  height: auto;
+  left: 250px;
+  bottom: 95px;
+  animation: mario_saltar .8s infinite ease-in-out;
+}
+
+.mario_grande {
+  opacity: 0;
+}
+.mario_chiquito {
+  opacity: 1;
+}
+
+.bloque_1 {
+  position: absolute;
+  width: 90px;
+  height: auto;
+  bottom: 230px;
+  left: 250px;
+  animation: bloque_golpeado .8s  infinite;
+}
+.bloque_2 {
+  position: absolute;
+  width: 90px;
+  height: auto;
+  bottom: 230px;
+  left: 495px;
+}
+
+.bloque_solido {
+  position: absolute;
+  width: 60px;
+  height: auto;
+  bottom: 284px;
+  left: 199px;
+}
+
+.tubo {
+  position: absolute;
+  width: auto;
+  height: 200px;
+  bottom: 274px;
+  left: -115px;
+}
+
+.caparazon_tortuga {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  bottom: 284px;
+  left: 100px;
+}
+
+.hongo {
+  position: absolute;
+  width: 65px;
+  height: auto;
+  bottom: 230px;
+  left: 263px;
+  animation: salir_hongo .8s  infinite;
+  z-index: -1;
+}
+
+@keyframes mario_saltar {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-65px);
+  }
+}
+
+@keyframes bloque_golpeado {
+  0% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes salir_hongo{
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(-60px) translateX(-15px);
+  }
+20% {
+    transform: translateY(-120px) translateX(-30px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-60px) translateX(-15px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+
+}}
+
+/* <!-- _________________________________________________________FONDO_3____________________________________________ --> */
+
+.fondo_3 {
+  position: relative;
+  background-image: url(/assets_3/fondo/fondo_3.png);
+  height: 500px;
+  width: 750px;
+  background-size: cover;
+  margin: auto;
+  margin-top: 50px;
+  border: solid 2px rgb(0, 0, 0);
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+}
+
+.personaje_3 {
+  position: absolute;
+  width: 160px;
+  height: auto;
+  left: 200px;
+  bottom: 10px;
 }
