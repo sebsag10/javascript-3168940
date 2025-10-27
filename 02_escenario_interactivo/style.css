@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #2d2c2c; /* color de respaldo (cielo) */
+  background-color: rgba(0, 0, 0, 0.9); /* color de respaldo (cielo) */
 }
 
 .escenario {
@@ -764,3 +764,36 @@ img {
   left: 200px;
   bottom: 10px;
 }
+
+/* <!-- _________________________________________________________botones____________________________________________ --> */
+
+
+.atras {
+  position: absolute;
+  left: 80px;
+  top: 220px;
+  width: 100px;
+  height:100px;
+  font-size: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+.siguiente {
+  position: absolute;
+  right: 80px;
+  top: 220px;
+  width: 100px;
+  height: 100px;
+  font-size: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+/* <!-- _________________________________________________________botones____________________________________________ --> */
