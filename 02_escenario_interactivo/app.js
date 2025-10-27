@@ -73,11 +73,8 @@ sol.addEventListener("click", () => {
   titulo_contador.style.filter = "drop-shadow(1px 1px 20px white)";
 });
 
-
-
-
 conejo.addEventListener("click", () => {
-    conejo.style.filter="grayscale(1)"
+  conejo.style.filter = "grayscale(1)";
 });
 const score_platino = document.querySelector(".score_platino");
 const score_oro = document.querySelector(".score_oro");
@@ -103,9 +100,45 @@ platino.addEventListener("click", () => {
 oro.addEventListener("click", () => {
   oro.classList.add("coger_moneda");
   counter_3++;
-  score_oro
-  .textContent = counter_3;
+  score_oro.textContent = counter_3;
 });
 /* <!-- _________________________________________________________FONDO_2____________________________________________ --> */
 
+const mario_chiquito = document.querySelector(".mario_chiquito");
+const bloque_1 = document.querySelector(".bloque_1");
+const hongo = document.querySelector(".hongo");
+const mario_grande = document.querySelector(".mario_grande");
 
+mario_chiquito.addEventListener("click", () => {
+  mario_chiquito.classList.add("mario_saltar");
+  bloque_1.classList.add("bloque_glopeado");
+  hongo.classList.add("salir_hongo");
+  mario_grande.classList.add("mario_crecer");
+});
+
+const bloque_2 = document.querySelector(".bloque_2");
+const hongo_vida = document.querySelector(".hongo_vida");
+const numero_contador_2 = document.querySelector(".numero_contador_2");
+
+let contador_2 = 1;
+
+bloque_2.addEventListener("click", () => {
+  hongo_vida.classList.add("hongo_vida_aparecer");
+  bloque_2.classList.add("bloque_golpeado_2");
+  contador_2++; 
+  numero_contador_2.textContent = contador_2;
+})
+
+function salir_hongo_vida() {
+  hongo_vida.classList.remove("hongo_vida_aparecer");
+}
+
+// Cuando termina la animación del bloque, no eliminamos el hongo de inmediato
+bloque_2.addEventListener("animationend", () => {
+  bloque_2.classList.remove("bloque_golpeado_2");
+
+  // Dejamos que el hongo dure sus 5 segundos
+  setTimeout(() => {
+    salir_hongo_vida();
+  }, 6000); // 5000 ms = 5 segundos
+});

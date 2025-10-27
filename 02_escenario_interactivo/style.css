@@ -450,7 +450,7 @@ img {
   overflow: hidden;
   background-position: center bottom;
   background-size: cover;
-  z-index: -1000;
+  z-index: 0;
 }
 
 .mario {
@@ -459,14 +459,16 @@ img {
   height: auto;
   left: 250px;
   bottom: 95px;
-  animation: mario_saltar .8s infinite ease-in-out;
 }
 
 .mario_grande {
   opacity: 0;
+  width: 115px;
+  height: auto;
 }
 .mario_chiquito {
   opacity: 1;
+  cursor: pointer;
 }
 
 .bloque_1 {
@@ -475,7 +477,49 @@ img {
   height: auto;
   bottom: 230px;
   left: 250px;
-  animation: bloque_golpeado .8s  infinite;
+}
+.hongo {
+  position: absolute;
+  width: 65px;
+  height: auto;
+  bottom: 230px;
+  left: 262px;
+  z-index: -1;
+}
+.hongo_vida {
+  position: absolute;
+  width: 65px;
+  height: auto;
+  bottom: 230px;
+  left: 502px;
+  z-index: -1;
+}
+
+.hongo_vida:hover {
+  animation-play-state: paused;
+}
+
+.hongo_vida_aparecer {
+  animation: hongo_vida_aparecer 3s linear forwards;
+}
+@keyframes hongo_vida_aparecer {
+  0% {
+    opacity: 1;
+    transform: translateY(-55px);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(51px, -55px);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(170px, 141px);
+  }
+  99.99% {
+    opacity: 1;
+    transform: translate(-200px, 141px);
+  }
+  100%{opacity: 0;}
 }
 .bloque_2 {
   position: absolute;
@@ -485,6 +529,23 @@ img {
   left: 495px;
 }
 
+.bloque_golpeado_2 {
+  animation: bloque_golpeado_2 0.2s forwards;}
+
+@keyframes bloque_golpeado_2 {
+  0% {
+    transform: translateY(0px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+    100% {
+    transform: translateY(0px);
+  }
+
+}
+
 .bloque_solido {
   position: absolute;
   width: 60px;
@@ -492,7 +553,40 @@ img {
   bottom: 284px;
   left: 199px;
 }
+.bloque_solido_2 {
+  position: absolute;
+  width: 60px;
+  height: auto;
+  bottom: 95px;
+  left: 730px;
+}
+.bloque_solido_3 {
+  position: absolute;
+  width: 63px;
+  height: auto;
+  bottom: 230px;
+  left: 264px;
+  z-index: -1;
+}
 
+.bloque_solido_aparecer {
+  animation: bloque_solido_aparecer 0.8s ease-in-out forwards;
+}
+
+@keyframes bloque_solido_aparecer {
+  0% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  90% {
+    opacity: 0.5;
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 .tubo {
   position: absolute;
   width: auto;
@@ -506,29 +600,58 @@ img {
   width: 100px;
   height: auto;
   bottom: 284px;
-  left: 100px;
+  left: 124px;
+  animation: caparazon_mover 2s infinite ease;
 }
 
-.hongo {
-  position: absolute;
-  width: 65px;
-  height: auto;
-  bottom: 230px;
-  left: 263px;
-  animation: salir_hongo .8s  infinite;
-  z-index: -1;
+.caparazon_tortuga:hover {
+  animation-play-state: paused;
+}
+
+@keyframes caparazon_mover {
+  0% {
+    transform: translateX(1px);
+  }
+  60% {
+    transform: translateX(-130px);
+  }
+  90% {
+    transform: translateX(1px);
+  }
+}
+.mario_saltar {
+  animation: mario_saltar 4.9s forwards;
 }
 
 @keyframes mario_saltar {
   0% {
     transform: translateY(0px);
+    opacity: 1;
   }
 
-  50% {
-    transform: translateY(-65px);
+  10% {
+    transform: translateY(-50px);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  99.99% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
+.bloque_glopeado {
+  animation: bloque_golpeado 0.8s forwards;
+}
 @keyframes bloque_golpeado {
   0% {
     transform: translateY(0px);
@@ -539,31 +662,85 @@ img {
   50% {
     transform: translateY(-10px);
   }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@keyframes salir_hongo{
-  0% {
+  60% {
     transform: translateY(0px);
     opacity: 0;
   }
-  10% {
-    transform: translateY(-60px) translateX(-15px);
+  100% {
+    transform: translateY(0px);
+    opacity: 0;
   }
-20% {
-    transform: translateY(-120px) translateX(-30px);
+}
+
+.salir_hongo {
+  animation: salir_hongo 4.8s linear forwards;
+}
+@keyframes salir_hongo {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(-59px);
     opacity: 1;
   }
-  50% {
-    transform: translateY(-60px) translateX(-15px);
+
+  20% {
+    transform: translate(-10px, -59px);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(32px, -59px);
+    opacity: 1;
+  }
+  64% {
+    transform: translate(250px, 140px);
+    opacity: 1; /* va bajando suavemente */
+  }
+  75% {
+    transform: translate(412px, 140px);
+    opacity: 1; /* llega al punto final */
+  }
+  99% {
+    transform: translate(40px, 140px);
+    opacity: 1;
   }
   100% {
-    transform: translateY(0px) translateX(0px);
+    transform: translate(30px, 140px);
+    opacity: 0;
+  }
+}
+.mario_crecer {
+  animation: mario_crecer 5s forwards;
+}
 
-}}
+@keyframes mario_crecer {
+  0% {
+    opacity: 0; /* comienza invisible */
+    transform: scale(0); /* opcional: aparece "creciendo" */
+  }
+  90% {
+    opacity: 0; /* casi visible */
+    transform: scale(0.5); /* un poco más grande */
+  }
+  100% {
+    opacity: 1; /* termina visible */
+    transform: scale(1); /* tamaño normal */
+  }
+}
 
+.contador_2{
+  position: absolute;
+  top: 10px;
+  left: 630px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255, 0.3);
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 10;
+  width: auto;
+}
 /* <!-- _________________________________________________________FONDO_3____________________________________________ --> */
 
 .fondo_3 {
