@@ -142,3 +142,58 @@ bloque_2.addEventListener("animationend", () => {
     salir_hongo_vida();
   }, 6000); // 5000 ms = 5 segundos
 });
+
+/* <!-- _________________________________________________________carrusel____________________________________________ --> */ 
+
+
+// Seleccionar todos los elementos principales
+const escenarios = document.querySelectorAll('.escenario');
+const miniaturas = document.querySelectorAll('.min');
+const btnAtras = document.getElementById('atras');
+const btnSiguiente = document.getElementById('siguiente');
+
+let indice = 0;
+
+// Función para mostrar el escenario y activar la miniatura correspondiente
+function mostrarEscenario(i) {
+  // Quitar clase activo a todos los escenarios y miniaturas
+  escenarios.forEach(e => e.classList.remove('activo'));
+  miniaturas.forEach(m => m.classList.remove('activo'));
+
+  // Agregar clase activo al actual
+  escenarios[i].classList.add('activo');
+  miniaturas[i].classList.add('activo');
+
+  indice = i;
+}
+
+// Mostrar el primero al iniciar
+mostrarEscenario(0);
+
+// Botón siguiente
+btnSiguiente.addEventListener('click', () => {
+  indice++;
+  if (indice >= escenarios.length) {
+    indice = 0;
+  }
+  mostrarEscenario(indice);
+});
+
+// Botón atrás
+btnAtras.addEventListener('click', () => {
+  indice--;
+  if (indice < 0) {
+    indice = escenarios.length - 1;
+  }
+  mostrarEscenario(indice);
+});
+
+// Clic en las miniaturas
+miniaturas.forEach((min, i) => {
+  min.addEventListener('click', () => {
+    mostrarEscenario(i);
+  });
+});
+
+
+/* <!-- _________________________________________________________carrusel____________________________________________ --> */ 

@@ -7,90 +7,223 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="body">
-    <div class="escenario_container">
-    <div class="escenario">  
+    <div class="galeria">
+      <div class="viewport">
+        <div class="juego_1 escenario activo">
+          <!-- nubes -->
+          <img
+            src="/assets/Animables/nube.png"
+            class="nube nube_pequeña"
+            alt="nube"
+          />
+          <img
+            src="/assets/Animables/nube.png"
+            class="nube nube_pequeña_2"
+            alt="nube"
+          />
+          <img
+            src="/assets/Animables/nube.png"
+            class="nube nube_mediana"
+            alt="nube"
+          />
+          <img
+            src="/assets/Animables/nube.png"
+            class="nube nube_grande"
+            alt="nube"
+          />
+          <img
+            src="/assets/Animables/nube.png"
+            class="nube nube_grande_2"
+            alt="nube"
+          />
+          <img
+            src="/assets/Animables/nube.png"
+            class="nube nube_grande_3"
+            alt="nube"
+          />
+          <img
+            src="/assets/Animables/nube.png"
+            class="nube nube_grande_4"
+            alt="nube"
+          />
+          <img
+            src="/assets/Animables/nube.png"
+            class="nube nube_grande_5"
+            alt="nube"
+          />
+          <!-- goku -->
+          <img
+            src="/assets/Animables/son_goku.png"
+            alt="son goku"
+            class="nube nube_pequeña son_goku"
+          />
+          <!-- caracol -->
+          <img
+            src="/assets/Animables/caracol.png"
+            alt="caracol"
+            class="caracol"
+          />
+          <!-- cofre -->
+          <img src="/assets/Animables/cofre.png" alt="cofre" id="cofre" />
+          <!-- modal invetario -->
+          <div id="modal">
+            <div class="moneda_divs">
+              <img
+                src="/assets/Clickeables/moneda_platino.png"
+                alt="moneda de platino"
+                class="moneda platino"
+              />
+            </div>
+            <div class="moneda_divs">
+              <img
+                src="/assets/Clickeables/moneda_oro.png"
+                alt="moneda de oro"
+                class="moneda oro"
+              />
+            </div>
+            <div class="moneda_divs">
+              <img
+                src="/assets/Clickeables/moneda_bronce.png"
+                alt="moneda de bronce"
+                class="moneda bronce"
+              />
+            </div>
+            <button id="cerrar_modal">X</button>
+          </div>
 
-<!-- nubes -->
-<img src="/assets/Animables/nube.png" class="nube nube_pequeña" alt="nube">
-<img src="/assets/Animables/nube.png" class="nube nube_pequeña_2" alt="nube">
-<img src="/assets/Animables/nube.png" class="nube nube_mediana" alt="nube">
-<img src="/assets/Animables/nube.png" class="nube nube_grande" alt="nube">
-<img src="/assets/Animables/nube.png" class="nube nube_grande_2" alt="nube">
-<img src="/assets/Animables/nube.png" class="nube nube_grande_3" alt="nube">
-<img src="/assets/Animables/nube.png" class="nube nube_grande_4" alt="nube">
-<img src="/assets/Animables/nube.png" class="nube nube_grande_5" alt="nube">
-<!-- goku -->
-<img src="/assets/Animables/son_goku.png" alt="son goku" class="nube nube_pequeña son_goku">
-<!-- caracol -->
-<img src="/assets/Animables/caracol.png" alt="caracol" class="caracol" >
-<!-- cofre -->
-<img src="/assets/Animables/cofre.png" alt="cofre" id="cofre">
-<!-- modal invetario -->
-<div id="modal">
-  <div class="moneda_divs"><img src="/assets/Clickeables/moneda_platino.png" alt="moneda de platino"  class="moneda platino" ></div>
-  <div class="moneda_divs"><img src="/assets/Clickeables/moneda_oro.png" alt="moneda de oro"  class="moneda oro"></div>
-  <div class="moneda_divs"><img src="/assets/Clickeables/moneda_bronce.png" alt="moneda de bronce" class="moneda bronce"></div>
-  <button id="cerrar_modal">X</button>
-</div>
+          <div id="score_container">
+            <div><h2 class="moneda_titulo_contador">monedas</h2></div>
+            <div id="monedas_container">
+              <div class="fondo_moneda">
+                <span class="numer_score score_bronce">0</span
+                ><img
+                  src="/assets/Clickeables/moneda_bronce.png"
+                  alt="moneda"
+                  class="moneda_score"
+                />
+              </div>
+              <div class="fondo_moneda">
+                <span class="numer_score score_oro">0</span
+                ><img
+                  src="/assets/Clickeables/moneda_oro.png"
+                  alt="moneda"
+                  class="moneda_score"
+                />
+              </div>
+              <div class="fondo_moneda">
+                <span class="numer_score score_platino">0</span
+                ><img
+                  src="/assets/Clickeables/moneda_platino.png"
+                  alt="moneda"
+                  class="moneda_score"
+                />
+              </div>
+            </div>
+          </div>
 
+          <img src="/assets/Clickeables/conejo.png" alt="conejo" id="conejo" />
 
-<div id="score_container">
-  <div><h2 class="moneda_titulo_contador">monedas</h2></div>
-<div id="monedas_container">
-  <div class="fondo_moneda" ><span class="numer_score score_bronce" >0</span><img src="/assets/Clickeables/moneda_bronce.png" alt="moneda" class="moneda_score "></div>
-  <div class="fondo_moneda" ><span class="numer_score score_oro">0</span><img src="/assets/Clickeables/moneda_oro.png" alt="moneda"class="moneda_score "></div>
-  <div class="fondo_moneda" ><span class="numer_score score_platino">0</span><img src="/assets/Clickeables/moneda_platino.png" alt="moneda"class="moneda_score"></div>
-</div></div>
+          <div class="plantera">
+            <img
+              src="/assets/Animables/plantera_2.webp"
+              alt="planta"
+              class="planta_1"
+            /><img
+              src="/assets/Animables/plantera_1.webp"
+              alt="planta"
+              class="planta_2"
+            />
+          </div>
 
-<img src="/assets/Clickeables/conejo.png" alt="conejo" id="conejo" >
+          <div class="botones_cambio_fondo">
+            <img
+              src="/assets/Clickeables/luna.png"
+              alt="luna"
+              class="luna"
+            /><img src="/assets/Clickeables/sol.png" alt="sol" class="sol" />
+          </div>
+        </div>
 
-<div class="plantera"><img src="/assets/Animables/plantera_2.webp" alt="planta" class="planta_1"><img src="/assets/Animables/plantera_1.webp" alt="planta" class="planta_2"></div>
+        <!-- _________________________________________________________FONDO_2____________________________________________ -->
 
-<div class="botones_cambio_fondo"><img src="/assets/Clickeables/luna.png" alt="luna" class="luna"><img src="/assets/Clickeables/sol.png" alt="sol" class="sol"></div>
+        <div class="fondo_2 escenario">
+          <div class="marios">
+            <img
+              src="/assets_2/Animables/mario_grande.png"
+              alt="mario grande"
+              class="mario mario_grande"
+            />
+            <img
+              src="/assets_2/Animables/mario_chiquito.jpg"
+              alt="mario chiquito"
+              class="mario mario_chiquito"
+            />
+          </div>
 
+          <img
+            src="/assets_2/Clickeables/bloque.jpg"
+            alt="bloque"
+            class="bloque bloque_1"
+          />
+          <img
+            src="/assets_2/Clickeables/bloque.jpg"
+            alt="bloque"
+            class="bloque bloque_2"
+          />
+          <img
+            src="/assets_2/imgs/moneda_cogida.webp"
+            alt="bloque"
+            class="bloque_solido"
+          />
+          <img
+            src="/assets_2/imgs/moneda_cogida.webp"
+            alt="bloque"
+            class="bloque_solido_2"
+          />
+          <img
+            src="/assets_2/imgs/moneda_cogida.webp"
+            alt="bloque"
+            class="bloque_solido_3"
+          />
+          <img src="assets_2/imgs/tubo.jpg" alt="tubo" class="tubo" />
+          <img
+            src="/assets_2/Clickeables/caparazon_tortuga.jpg"
+            alt="caparazon_tortuga"
+            class="caparazon_tortuga"
+          />
+          <img src="/assets_2/Animables/hongo.jpg" alt="hongo" class="hongo" />
+          <img
+            src="/assets_2/Animables/hongo_vida.jpg"
+            alt="hongo de hongo_vida"
+            class="hongo_vida"
+          />
+          <div class="contador_2">
+            <p>Vidas : <span class="numero_contador_2">1</span></p>
+          </div>
+        </div>
+
+        <!-- _________________________________________________________FONDO_3____________________________________________ -->
+
+        <div class="juego_3 escenario"></div>
+      </div>
+      <div class="controles">
+        <button id="atras"><</button>
+        <div class="mins">
+          <div class="min activo">
+            <img src="/min/min_1.png" alt="juego_1" data-set="0" />
+          </div>
+          <div class="min">
+            <img src="/min/min_2.png" alt="juego_2" data-set="1" />
+          </div>
+          <div class="min">
+            <img src="min/min_3.png" alt="juego_3" data-set="2" />
+          </div>
+        </div>
+        <button id="siguiente">></button>
+      </div>
     </div>
-<!-- _________________________________________________________FONDO_2____________________________________________ -->
-<!-- <div class="fondo_2">
 
-<div class="marios">
-  <img src="/assets_2/Animables/mario_grande.png" alt="mario grande" class="mario mario_grande">
-  <img src="/assets_2/Animables/mario_chiquito.jpg" alt="mario chiquito" class="mario mario_chiquito"></div>
-
-  <img src="/assets_2/Clickeables/bloque.jpg" alt="bloque"  class="bloque bloque_1">
-  <img src="/assets_2/Clickeables/bloque.jpg" alt="bloque"  class="bloque bloque_2">
-  <img src="/assets_2/imgs/moneda_cogida.webp" alt="bloque" class="bloque_solido">
-  <img src="/assets_2/imgs/moneda_cogida.webp" alt="bloque" class="bloque_solido_2">
-  <img src="/assets_2/imgs/moneda_cogida.webp" alt="bloque" class="bloque_solido_3">
-<img src="assets_2/imgs/tubo.jpg" alt="tubo" class="tubo">
-<img src="/assets_2/Clickeables/caparazon_tortuga.jpg" alt="caparazon_tortuga" class="caparazon_tortuga"  >
-<img src="/assets_2/Animables/hongo.jpg" alt="hongo" class="hongo"  >
-<img src="/assets_2/Animables/hongo_vida.jpg" alt="hongo de hongo_vida" class="hongo_vida"  >
-<div class="contador_2"><p>Vidas : <span class="numero_contador_2">1</span></p></div>
-</div> -->
-
-<!-- _________________________________________________________FONDO_3____________________________________________ -->
-<!-- 
-<div class="fondo_3">
-
-<img src="/assets_3/Animables/personaje.png" alt="personaje" class="personaje_3">
-
-
-</div> -->
-
-
-
-
-
-
-
-
-
-<button class="atras"><</button>
-<button class="siguiente">></button>
-
-</div>
-    <script src="app_2.js"></script>
+    <!-- _________________________________________________________botones____________________________________________ -->
     <script src="app.js"></script>
   </body>
-
 </html>
