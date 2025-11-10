@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+/* Quita estilos por defecto del body */
+body {
+  font-family: sans-serif; /* o el tipo que prefieras */
+  color: #000000; /* texto claro sobre fondo oscuro */
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 90px;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+
+  color: white;
+  margin: auto;
+}
+
+#header {
+  background-image: url(/IMGS/banner.png);
+  background-size: cover; /* Para que cubra todo el espacio */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que se repita */
+  height: 100vh; /* Ocupa toda la pantalla */
+}
+
+.container_1 {
+  background: rgba(0, 0, 0, 0.5); /* negro con 50% de transparencia */
+  z-index: 10;
+}
+.sinopsis{
+  width: 40%;
+  text-align: center;
+  margin-top: 10%;
+}
