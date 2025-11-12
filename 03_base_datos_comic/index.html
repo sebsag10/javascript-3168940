@@ -4,10 +4,99 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="container_1">
+      <header id="header">
+        <nav>
+          <p>logo</p>
+          <ul>
+            <li><a href="#inicio">inicio</a></li>
+            <li><a href="#section_2">2</a></li>
+            <li><a href="#section_3">3</a></li>
+            <li><a href="#section_4">4</a></li>
+          </ul>
+        </nav>
+        <div class="sinopsis_container">
+          <div class="sinopsis">
+            <h1>El eco eterno</h1>
+            <p>
+              Se narra el viaje espiritual y artístico de
+              <span class="personaje">Elkin</span>, un joven músico impulsado
+              por su pasión y su inconformismo, que lucha contra las injusticias
+              y la censura en una sociedad dividida. A su lado lo acompañan
+              <span class="personaje">la Sombra</span>, símbolo de sus miedos
+              más profundos, y <span class="personaje">el Cuervo</span>, voz de
+              su libertad y rebeldía interior. Juntos encarnan la resistencia
+              del arte frente al poder, transformando cada nota y palabra en un
+              grito de identidad y esperanza.
+            </p>
+            <div class="botones">
+              <button class="comenzar_comic">Comenzar comic</button>
+              <button class="mas_informacion">Más información</button>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
 
-    
+    <div class="overlay">
+      <div class="personajes_modal">
+        <h2>Personajes</h2>
+        <p>
+          Cada acorde tiene un alma, y cada alma una historia.<br />
+          Conoce a los seres que dan vida a esta leyenda: músicos, sombras y
+          guardianes que habitan entre el sonido y el silencio.
+        </p>
+        <p class="subtext">De la oscuridad nace el eco eterno.</p>
+        <button class="boton_modal">Conocer personajes</button>
+      </div>
+
+      <div class="capitulos_modal">
+        <h2>Caps</h2>
+        <p>
+          Cada capítulo es un eco en el tiempo.<br />
+          Explora los fragmentos que dieron forma a la leyenda: batallas,
+          revelaciones y melodías que aún resuenan en la eternidad.
+        </p>
+        <p class="subtext">Del silencio nacen las historias.</p>
+        <button class="boton_modal">Ver capítulos</button>
+      </div>
+      <div class="cerrar">atras</div>
+    </div>
+<!-- OVERLAY PRINCIPAL -->
+<div class="overlay" id="overlay-principal">
+  <div class="personajes_modal">
+    <h2>Personajes</h2>
+    <p>
+      Cada acorde tiene un alma, y cada alma una historia.<br />
+      Conoce a los seres que dan vida a esta leyenda: músicos, sombras y
+      guardianes que habitan entre el sonido y el silencio.
+    </p>
+    <p class="subtext">De la oscuridad nace el eco eterno.</p>
+    <button class="boton_modal" data-modal="modal-personajes">
+      Conocer personajes
+    </button>
+  </div>
+
+  <div class="capitulos_modal">
+    <h2>Capítulos</h2>
+    <p>
+      Cada capítulo es un eco en el tiempo.<br />
+      Explora los fragmentos que dieron forma a la leyenda: batallas,
+      revelaciones y melodías que aún resuenan en la eternidad.
+    </p>
+    <p class="subtext">Del silencio nacen las historias.</p>
+    <button class="boton_modal" data-modal="modal-caps">
+      Ver capítulos
+    </button>
+  </div>
+
+  <div class="cerrar">Atrás</div>
+</div>
+
+
     <script src="app.js"></script>
     <script src="bs.js"></script>
   </body>

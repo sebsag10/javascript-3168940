@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+/* Quita estilos por defecto del body */
+body {
+  font-family: sans-serif; /* o el tipo que prefieras */
+  color: #000000; /* texto claro sobre fondo oscuro */
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 90px;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+
+  color: white;
+  margin: auto;
+}
+
+#header {
+  background-image: url(/IMGS/banner.png);
+  background-size: cover; /* Para que cubra todo el espacio */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que se repita */
+  height: 100vh; /* Ocupa toda la pantalla */
+}
+
+.container_1 {
+  background: rgba(0, 0, 0, 0.5); /* negro con 50% de transparencia */
+  z-index: 10;
+}
+
+.sinopsis_container {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 2%;
+}
+.sinopsis {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+h1 {
+  -webkit-text-stroke: 2px black;
+  color: #fff; /* texto blanco */
+  font-size: 3rem; /* tamaño grande (ajustable) */
+  font-weight: 700; /* texto grueso y fuerte */
+  text-align: center; /* centrado */
+  margin: 0; /* sin margen por defecto */
+  padding: 0.5em 0; /* espacio arriba y abajo */
+  letter-spacing: 1px; /* un poco más de espacio entre letras */
+  text-transform: uppercase; /* opcional: convierte en mayúsculas */
+}
+
+p {
+  color: #e0e0e0; /* gris claro para contraste suave */
+  font-size: 1.2rem; /* tamaño legible */
+  line-height: 1.6; /* espacio entre líneas */
+  text-align: center; /* centrado como el h1 */
+  max-width: 700px; /* ancho máximo para que no se extienda demasiado */
+  margin: 0 auto; /* centrado horizontal */
+  padding: 0 1em; /* un poco de espacio a los lados */
+  font-weight: 300; /* más ligero para diferenciar del h1 */
+  text-align: justify;
+}
+
+/* resalta solo con negrita y un toque sutil */
+.personaje {
+  font-weight: bold;
+  color: #c95b5b;
+}
+
+.botones button {
+  background-color: rgba(0, 0, 0, 0.3); /* gris oscuro */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* gris claro al pasar el ratón */
+  scale: 1.05;
+}
+.overlay {
+  position: fixed; /* Siempre cubre toda la ventana */
+  inset: 0; /* Atajo: top/right/bottom/left = 0 */
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  
+}
+
+/* Cuando activas el overlay (por ejemplo, con una clase "activo") */
+.activo {
+  opacity: 1; /* Se vuelve visible */
+  pointer-events: auto; /* Ahora sí bloquea clics o permite interacción */
+}
+
+/* ***************************Contenido modal******************************** */
+.personajes_modal {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  height: 500px;
+  width: 400px;
+  gap: 30px;
+  transition: transform 0.9s ease, box-shadow 0.9s ease;
+}
+
+.boton_modal {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: solid 1px #fff;
+  width: 70%;
+  border-radius: 8px;
+  font-size: 20px;
+  transition: 0.9s;
+  padding: 2px;
+}
+.capitulos_modal {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  height: 500px;
+  width: 400px;
+  gap: 30px;
+  transition: transform 0.9s ease, box-shadow 0.9s ease;
+}
+.capitulos_modal:hover,
+.personajes_modal:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+  transform: scale(1.05) translateY(-2px); /* sube un poco */
+}
+.subtext {
+  font-style: italic;
+  font-size: 15px;
+  opacity: 0.8;
+  margin-bottom: 30px;
+  color: #aaa;
+}
+.cerrar {
+  position: absolute; /* se posiciona respecto al overlay */
+  right: 40px;
+  bottom: 40px;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  width: 90px;
+  height: auto; /* Animación flotante */
+  animation: flotar 1s ease-in-out infinite alternate;
+
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
