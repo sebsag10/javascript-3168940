@@ -1,5 +1,5 @@
 let comic = {
-  nombreComic: "Arkana",
+  nombreComic: "El eco eterno",
   numeroCapitulos: 3,
   genero: "biográfico, drama épico",
   sinopsis:
@@ -8,34 +8,46 @@ let comic = {
   year: 2025,
   descripcion:
     "Cómic digital interactivo inspirado en la historia de Elkin Ramírez y el legado simbólico de Kraken. Combina arte visual, narrativa transmedia y elementos musicales para conectar a nuevas generaciones con el espíritu del rock colombiano.",
+  personajes: [
+    {
+      nombre: "Elkin",
+      descripcion:
+        "La versión madura del artista que transforma el dolor en sabiduría. Porta su guitarra negra y guía su renacimiento, enfrentando desafíos mientras busca su voz artística.",
+      subtexto: "Del dolor nace su música.",
+      imagen: "./IMGS/elkin.png",
+    },
+    {
+      nombre: "La Sombra",
+      descripcion:
+        "Es el reflejo de sus miedos y heridas, pero también la fuente de su fuerza. Surge en momentos de conflicto para recordarle quién es, y transformar su sufrimiento en arte y conciencia.",
+      subtexto: "Fuerza en su oscuridad.",
+      imagen: "./IMGS/sombra.png",
+    },
+    {
+      nombre: "El Cuervo",
+      descripcion:
+        "Mensajero de libertad y sabiduría, guía a Elkin a través del velo del silencio. Su presencia une lo terrenal con lo espiritual, llevando la verdad donde las palabras no pueden llegar.",
+      subtexto: "Guía entre sombra y luz.",
+      imagen: "./IMGS/cuervo.png",
+    },
+  ],
+
   capitulos: [
     {
-      id: 1,
       nombre: "El origen",
-      personajes: ["Elkin", "La Sombra", "El Cuervo"],
-      portada: "url_de_portada_origen.jpg",
+      portada: "./IMGS/caps/cap_1.png",
       descripcion:
         "Elkin descubre su voz interior en medio del caos universitario. Entre dudas, sueños y rebeldía, nace la chispa de lo que se convertirá en una revolución musical.",
     },
     {
-      id: 2,
       nombre: "La batalla",
-      personajes: [
-        "Elkin",
-        "La Sombra",
-        "El Cuervo",
-        "Autoridades",
-        "Multitud",
-      ],
-      portada: "url_de_portada_batalla.jpg",
+      portada: "./IMGS/caps/cap_2.png",
       descripcion:
         "La banda enfrenta la represión del sistema. Entre protestas, discursos y guitarras encendidas, Elkin debe decidir entre la fama o la verdad.",
     },
     {
-      id: 3,
       nombre: "El legado",
-      personajes: ["Elkin", "La Sombra", "El Cuervo", "Nueva Generación"],
-      portada: "url_de_portada_legado.jpg",
+      portada: "./IMGS/caps/cap_3.png",
       descripcion:
         "Elkin deja su mensaje para una nueva generación: el arte como resistencia y la voz como símbolo eterno. El espíritu de Arkana se convierte en inmortal.",
     },

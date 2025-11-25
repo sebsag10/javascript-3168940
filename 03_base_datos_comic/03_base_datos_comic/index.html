@@ -3,33 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ARKANA - El eco eterno</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container_1">
-      <header id="header">
-        <nav>
-          <p>logo</p>
-          <ul>
-            <li><a href="#inicio">1</a></li>
-            <li><a href="#section_2">2</a></li>
-            <li><a href="#section_3">3</a></li>
-            <li><a href="#section_4">4</a></li>
-          </ul>
-        </nav>
-        <div class="sinopsis">
-          <h1>titulo del comic</h1>
+    <header id="header">
+      <nav>
+        <h1 class="logo">ARKANA</h1>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#personajes">Personajes</a></li>
+          <li><a href="#capitulos">Capitulos</a></li>
+          <li><a href="#mas_informacion">Más informacion</a></li>
+        </ul>
+      </nav>
+      <div class="sinopsis_container" id="inicio">
+        <h1>El eco eterno</h1>
+        <p>
+          Se narra el viaje espiritual y artístico de
+          <span class="personaje">Elkin</span>, un joven músico impulsado por su
+          pasión y su inconformismo, que lucha contra las injusticias y la
+          censura en una sociedad dividida. A su lado lo acompañan
+          <span class="personaje">la Sombra</span>, símbolo de sus miedos más
+          profundos, y <span class="personaje">el Cuervo</span>, voz de su
+          libertad y rebeldía interior. Juntos encarnan la resistencia del arte
+          frente al poder, transformando cada nota y palabra en un grito de
+          identidad y esperanza.
+        </p>
+      </div>
+    </header>
+
+    <section class="personajes_container" id="personajes">
+      <h2>Personajes principales</h2>
+      <div class="grupo_personajes"></div>
+    </section>
+
+    <section class="capitulos" id="capitulos">
+      <div class="capitulo"></div>
+    </section>
+    
+    <footer class="footer">
+      <div class="footer_content">
+        <div class="footer_logo">
+          <h2>ARKANA</h2>
+          <p>El legado del rock convertido en historia visual.</p>
+        </div>
+
+        <div class="footer_info" id="mas_informacion">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem
-            nihil exercitationem neque placeat delectus repudiandae, inventore,
-            atque recusandae adipisci in quibusdam sapiente enim facilis
-            consequuntur aut eos esse voluptate doloribus?
+            © 2025 Sebastián Acevedo González — Todos los derechos reservados.
+          </p>
+          <p>
+            Contacto:
+            <a href="mailto:sebastianacevedog@gmail.com">sebsag10@gmail.com</a>
+          </p>
+          <p>
+            Instagram:
+            <a href="https://instagram.com/tuperfil" target="_blank"
+              >@sebs_ag10</a
+            >
           </p>
         </div>
-      </header>
-    </div>
-    <script src="app.js"></script>
+      </div>
+    </footer>
+    <a href="#header" class="btn_arriba">↑</a>
     <script src="bs.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
