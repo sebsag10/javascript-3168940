@@ -2,10 +2,6 @@
 
 import { comic } from "./bs.js";
 
-
-
-
-
 const info_comic = document.querySelector("#inicio");
 
 info_comic.innerHTML = `
@@ -24,7 +20,7 @@ function crear_card_personaje(char) {
   const card = document.createElement("div");
   card.classList.add("card");
   card.innerHTML = `
-  <a href="./nueva_pag/index.html?id=${char.id}">
+  <a href="./personajes.html?id=${char.id}">
   <h3>${char.nombre}</h3>
   <div class="container_img"> <img src="${char.imagen}" alt="${char.nombre}" class="img_personajes"> </div>
   <p class="parrafo_cards">${char.descripcion}</p>
@@ -46,7 +42,7 @@ function crear_cpitulos(char) {
   const cap = document.createElement("div");
   cap.classList.add("capitulo");
   cap.innerHTML = `
-   <a href="...">
+    <a href="./capitulos.html?id=${char.id}">
   <h2>${char.nombre}</h2>
   <img src="${char.portada}" alt="${char.portada}" class="img_caps"></img>
   <p class="resumen">${char.descripcion}</p></a>`;
