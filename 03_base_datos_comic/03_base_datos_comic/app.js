@@ -58,3 +58,22 @@ function render_caps(lista, contendor) {
 }
 
 render_caps(comic.capitulos, capitulos);
+
+
+
+
+
+const header = document.getElementById("header");
+let indice = 0;
+
+setInterval(() => {
+  // Aplica fade-out
+  header.classList.add("fade-out");
+
+  // Cambia la imagen después de la transición
+  setTimeout(() => {
+    indice = (indice + 1) % comic.banners.length; // siguiente imagen
+    header.style.backgroundImage = `url("${comic.banners[indice]}")`;
+    header.classList.remove("fade-out"); // fade-in
+  }, 250); // 1000ms = duración de la transición CSS
+}, 5000); // cada 5 segundos cambia

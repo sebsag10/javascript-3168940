@@ -83,12 +83,20 @@ nav ul li a:hover {
 }
 
 #header {
-  background-image: url(/IMGS/banner.png);
-  background-size: cover; /* Para que cubra todo el espacio */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que se repita */
-  height: 700px; /* Ocupa toda la pantalla */
+  position: relative;
+  height: 700px;
+  background-image: url('./IMGS/banner_1.png'); /* Imagen inicial */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease-in-out;
+  
 }
+
+/* Capa para el fade */
+  #header.fade-out {
+    opacity: 0;
+  }
 
 
 small {
