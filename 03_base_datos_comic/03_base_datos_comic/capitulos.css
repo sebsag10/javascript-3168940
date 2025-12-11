@@ -109,6 +109,7 @@
 
   cursor: pointer;
   transition: 0.3s ease;
+  z-index: 10
 }
 
 .salir-btn:hover {
@@ -140,3 +141,70 @@
 }
 
 
+/* Animación de entrada */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card {
+  width: 520px;
+  max-width: 90vw;
+  padding: 32px;
+  border-radius: 32px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 35px rgba(80, 170, 255, 0.08), 0 20px 45px rgba(0, 0, 0, 0.85);
+  
+  /* Animación */
+  animation: cardFadeIn 0.8s ease-out forwards;
+  
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 25px rgba(100, 200, 255, 0.15), 0 25px 60px rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(120, 180, 255, 0.45);
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 640px) {
+  .card {
+    width: 100%;
+    max-width: 380px;
+    padding: 24px;
+    border-radius: 24px;
+  }
+  .card-img {
+    height: 240px;
+    border-radius: 20px;
+  }
+  .card-title {
+    font-size: 1.9rem;
+  }
+  .card-desc {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .card-img {
+    height: 200px;
+  }
+  .card-title {
+    font-size: 1.7rem;
+  }
+}

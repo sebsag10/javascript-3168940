@@ -151,3 +151,64 @@
   background: #444;
 }
 
+/* Botón siempre encima */
+.card-img {
+  position: relative;
+  z-index: 1;
+}
+
+.salir-btn {
+  z-index: 20; /* Siempre por encima */
+}
+
+/* MEDIA QUERIES - Respeta tus tamaños fijos */
+@media (max-width: 640px) {
+  .card {
+    width: 420px;
+    max-width: 90vw;
+    padding: 24px;
+    border-radius: 24px;
+  }
+  
+  /* Respeta tamaños originales */
+  .card-img { height: 260px; }
+  .cuervo img { width: 300px; }
+  .elkin img { width: 180px; }
+  
+  .card-title { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 360px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .card-img { height: 220px; }
+  .cuervo img { width: 260px; }
+  .elkin img { width: 160px; }
+  
+  .card-title { font-size: 1.6rem; }
+}
+
+@media (max-width: 380px) {
+  .card { width: 320px; }
+  .cuervo img { width: 230px; }
+  .elkin img { width: 140px; }
+}
+/* Animación de entrada suave */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card {
+  animation: cardFadeIn 0.9s ease-out forwards;
+}

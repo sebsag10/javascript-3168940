@@ -121,7 +121,7 @@ small {
 }
 
 .sinopsis:hover {
-  transform: scale(1.05);
+  transform: scale(1.05)
 }
 h1 {
   filter: drop-shadow(2px 2px 20px rgb(255, 255, 255));
@@ -275,6 +275,14 @@ h2 {
 .img_caps:hover {
   transform: scale(1.01);
   filter: drop-shadow(2px 2px 20px rgb(153, 152, 152));
+}
+
+.resumen{
+margin: auto;
+max-width: 600px;
+color: #ddd;  
+margin-top: 30px;
+text-align: center;
 }
 /* ***************************caps******************************** */
 .footer {
@@ -557,3 +565,45 @@ h2 {
     justify-content: center;
   }
 }
+
+/* Animaciones base */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Elementos que NO se animan con JS se quedan ocultos hasta que tengan .show */
+.card,
+.capitulo,
+.sinopsis,
+h1,
+.logo,
+#header {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Cuando tengan la clase .show → se animan */
+.show {
+  animation: fadeUp 0.8s ease-out forwards !important;
+}
+
+/* Cards de personajes un poco más "pop" */
+.card.show {
+  animation: scaleIn 0.7s ease-out forwards !important;
+}
+
+/* Retardo bonito en cascada */
+.card.show:nth-child(1)  { animation-delay: 0.1s; }
+.card.show:nth-child(2)  { animation-delay: 0.2s; }
+.card.show:nth-child(3)  { animation-delay: 0.3s; }
+.card.show:nth-child(4)  { animation-delay: 0.4s; }
+
+.capitulo.show:nth-child(1) { animation-delay: 0.2s; }
+.capitulo.show:nth-child(2) { animation-delay: 0.3s; }
+.capitulo.show:nth-child(3) { animation-delay: 0.4s; }
